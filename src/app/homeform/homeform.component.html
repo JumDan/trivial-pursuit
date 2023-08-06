@@ -1,0 +1,22 @@
+<form [formGroup]="homeform" (ngSubmit)="onSubmit()" class="formGame"  >
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Difficulty</mat-label>
+        <mat-select formControlName="level" >
+          <mat-option value="easy">Easy</mat-option>
+          <mat-option value="medium">Medium</mat-option>
+          <mat-option value="hard">Hard</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Preferred category</mat-label>
+        <mat-select formControlName="category" >
+            <mat-option *ngFor="let list of listaCategory" value="{{list.id}}">{{list.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!homeform.valid" >Play game</button>
+
+</form>
