@@ -15,8 +15,8 @@ import { HomeformComponent } from './homeform/homeform.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServizioTriviaService } from './servizi/servizio-trivia.service';
-import { HttpClientModule } from '@angular/common/http';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
