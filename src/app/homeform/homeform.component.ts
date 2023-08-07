@@ -3,7 +3,6 @@ import { ServizioTriviaService } from '../servizi/servizio-trivia.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InserisciAccountService } from '../servizi/inserisci-account.service';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
 
 
 @Component({
