@@ -25,7 +25,7 @@ getInfo(url: string){
 }
 
 updateInfo(url: string, body: {}){
-  return this.http.put('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+url, body)
+  return this.http.patch('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+url, body)
 }
 
 

@@ -15,12 +15,14 @@ export class QuizComponent implements OnInit{
   client: any
   naming: any
   clientId: any
+  bestScore: any
   question: any
   response: any = []
   responseRandom: any = []
   number: number = 0
   quizform!: FormGroup;
   isComplete = false
+  newrecord = false
 
   point = this.serviziotrivia.point
   constructor(private inserisciAccount: InserisciAccountService,
@@ -35,6 +37,7 @@ export class QuizComponent implements OnInit{
     this.inserisciAccount.getOneClient("/client/"+this.serviziotrivia.userId+'.json')
     .subscribe(data => {
       this.client = data
+      this.bestScore = this.client.point
       this.inserisciAccount.getInfo(`https://opentdb.com/api.php?amount=10&category=${this.client.category}&difficulty=${this.client.level}&type=multiple`)
       .subscribe((data: any) => {
         this.question = Object.keys(data).map((key) => { return data[key] })
@@ -91,7 +94,7 @@ export class QuizComponent implements OnInit{
     // console.log(this.question)
     // console.log(value);
     this.number++
-
+    this.newrecord = false
     if(this.question[index].correct_answer == value){
       this.point = this.point+10
     }
@@ -99,9 +102,23 @@ export class QuizComponent implements OnInit{
     if(index == 9){
       // console.log('ciaooooooooo');
       this.isComplete = true
-      this.inserisciAccount.updateInfo("/client/"+this.clientId+'.json',
-      {point: this.point}
-      )
+      this.newrecord = false
+      // console.log(this.client.point);
+      // console.log(this.point);
+      
+
+      if(this.point > this.client.point){
+        this.bestScore = this.point
+        this.newrecord = true
+        this.inserisciAccount.updateInfo("/client/"+this.clientId+'.json',
+        {point: this.point}
+        ).subscribe(data => {
+          console.log(data)
+        })
+      }else{
+        this.newrecord = false
+      }
+
       this.changeQuestion()
     }
 

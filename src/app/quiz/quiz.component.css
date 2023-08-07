@@ -33,7 +33,6 @@ min-height: 80px;
 }
 .complete {
   margin: auto;
-  margin-top: 50px;
 }
 .example-card.info {
   margin-left: 10px;
@@ -64,5 +63,9 @@ span.total {
 .punteggio.hard {
   font-size: 30px;
   margin-top: 13px;
-  color: #43ee18
+  color: #1f9b00
+}
+.newrecord {
+  font-size: 29px;
+  line-height: 40px;
 }

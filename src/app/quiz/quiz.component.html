@@ -7,6 +7,7 @@
     </mat-card-header>
     <mat-card-content>
         <p>Point: {{this.point}}</p>
+        <p>Best score: {{this.bestScore}}</p>
     </mat-card-content>
 </mat-card>
 
@@ -32,9 +33,10 @@
     <mat-card class="complete example-card">
         <mat-card-header>
           <mat-card-title>Total score</mat-card-title>
+          <mat-card-title class="newrecord" *ngIf="newrecord">New Record!</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <div [ngClass]="this.point <= 30 ? 'punteggio low' : this.point <= 70 ? 'punteggio medium' : 'punteggio hard'">
+          <div [ngClass]="newrecord ? 'punteggio hard' : 'punteggio medium'">
             {{this.point}}/<span class="total">100</span>
           </div>
         </mat-card-content>
