@@ -1,14 +1,52 @@
 
 
-<mat-card *ngIf="this.client"  class="example-card">
+<mat-card *ngIf="this.client" class="example-card info" >
     <mat-card-header>
         <mat-card-title>{{this.client.name}}</mat-card-title>
         <mat-card-subtitle>Level {{this.client.level | uppercase}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <p>Point: {{point}}</p>
+        <p>Point: {{this.point}}</p>
     </mat-card-content>
-    <!-- <mat-card-actions>
-        <button mat-raised-button color="primary">{{'Exit' | uppercase}}</button>
-    </mat-card-actions> -->
 </mat-card>
+
+<div class="pt-top"></div>
+
+<mat-card class="example-card center" *ngFor="let item of question; let i = index" >
+    <div *ngIf="i == number">
+        <mat-card-content>
+            <p  >{{item.category}}</p>
+        </mat-card-content>
+        <mat-card-header>
+            <mat-card-title class="titleHeight" [innerHTML]="item.question" >{{item.question}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <button [innerHTML]="element" (click)="onSubmit(element, i)" *ngFor="let element of shuffle(response[i])" mat-raised-button color="primary" type="submit" class="boxresponse" mat-button>
+                {{element}}
+            </button>
+        </mat-card-actions>
+    </div>
+</mat-card>
+
+<div *ngIf="isComplete">
+    <mat-card class="complete example-card">
+        <mat-card-header>
+          <mat-card-title>Total score</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div [ngClass]="this.point <= 30 ? 'punteggio low' : this.point <= 70 ? 'punteggio medium' : 'punteggio hard'">
+            {{this.point}}/<span class="total">100</span>
+          </div>
+        </mat-card-content>
+        <img mat-card-image src="https://img.freepik.com/free-vector/trophy_78370-345.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="onReset()" >{{'Try again' | uppercase}}</button>
+          <button mat-button color="warn" routerLink="/home">{{'Exit' | uppercase}}</button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+
+
+
+

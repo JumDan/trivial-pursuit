@@ -20,4 +20,13 @@ getOneClient(url: string){
   return this.http.get('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+url)
 }
 
+getInfo(url: string){
+  return this.http.get(url)
+}
+
+updateInfo(url: string, body: {}){
+  return this.http.put('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+url, body)
+}
+
+
 }

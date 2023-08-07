@@ -1,3 +1,68 @@
 .example-card {
     max-width: 400px;
-  }
+}
+.example-card.center {
+  margin: auto;
+  /* margin-top: 21px; */
+  width: 600px;
+  max-width: 100%;
+}
+.boxresponse {
+  width: 100%;
+  margin-right: 10px;
+  min-height: 100px!important;
+}
+.formGamediv {
+  width: 25%;
+  margin-right: 10px;
+  min-height: 100px!important;
+}
+form.quizform {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.pt-top{
+padding-top: 50px;
+}
+.titleHeight{
+min-height: 80px;
+}
+.complete {
+  margin: auto;
+  margin-top: 50px;
+}
+.example-card.info {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.complete{
+text-align: center;
+}
+.complete .mat-mdc-card-header {
+  justify-content: center!important;
+}
+
+span.total {
+  font-size: 23px;
+}
+
+
+.punteggio.low {
+  font-size: 30px;
+  margin-top: 13px;
+  color: #ff6b21
+}
+.punteggio.medium {
+  font-size: 30px;
+  margin-top: 13px;
+  color: #218cff
+}
+.punteggio.hard {
+  font-size: 30px;
+  margin-top: 13px;
+  color: #43ee18
+}
