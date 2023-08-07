@@ -8,9 +8,16 @@ import { Injectable } from '@angular/core';
 export class InserisciAccountService {
 
   constructor(private http: HttpClient) { }
+url = 'client.json'
+insertClient(parameters: {}){
+  return this.http.post('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+this.url, parameters)
+}
+getClient(){
+  return this.http.get('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+this.url)
+}
 
-insertClient(url: string, parameters: {}){
-  return this.http.post(url, parameters)
+getOneClient(url: string){
+  return this.http.get('https://trivial-c3afa-default-rtdb.europe-west1.firebasedatabase.app/'+url)
 }
 
 }

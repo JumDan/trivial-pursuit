@@ -1,0 +1,19 @@
+.titolo {
+    font-family: "Great Vibes", 'sans-serif';
+    margin: 0;
+    font-size: 50px!important;
+    line-height: 50px;
+    padding-top: 10px;
+}
+#header {
+    background: #044c6a;
+    color: #c39818;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+#header{
+    cursor: pointer;
+}

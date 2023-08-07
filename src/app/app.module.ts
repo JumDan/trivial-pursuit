@@ -13,10 +13,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HomeformComponent } from './homeform/homeform.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServizioTriviaService } from './servizi/servizio-trivia.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     QuizComponent,
     HomeformComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCardModule,
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule
