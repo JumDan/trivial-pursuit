@@ -6,8 +6,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeformComponent } from './homeform/homeform.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeformComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeformComponent },
+  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'quiz', component: QuizComponent },
   { path: 'quiz/:id', component: QuizComponent },
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
