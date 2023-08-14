@@ -55,7 +55,8 @@ export class HomeformComponent implements OnInit, AfterContentInit {
       {
         name: this.homeform.value.name, 
         level: this.homeform.value.level, 
-        category: this.homeform.value.category
+        category: this.homeform.value.category,
+        point: 0
       }
     ).subscribe(data =>{
       this.utente = data

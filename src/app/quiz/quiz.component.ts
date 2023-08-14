@@ -105,11 +105,11 @@ export class QuizComponent implements OnInit{
       this.newrecord = false
       // console.log(this.client.point);
       // console.log(this.point);
-      
-
+      if(this.point > this.bestScore){
+        this.newrecord = true
+      }
       if(this.point > this.client.point){
         this.bestScore = this.point
-        this.newrecord = true
         this.inserisciAccount.updateInfo("/client/"+this.clientId+'.json',
         {point: this.point}
         ).subscribe(data => {
