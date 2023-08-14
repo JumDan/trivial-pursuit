@@ -30,7 +30,6 @@ export class QuizComponent implements OnInit{
     private route: ActivatedRoute
     ){}
 
-    //userId = this.homeform.utente
   ngOnInit(): void {
     this.serviziotrivia.userId = this.route.snapshot.paramMap.get('id');
     this.clientId = this.serviziotrivia.userId
@@ -64,7 +63,6 @@ export class QuizComponent implements OnInit{
       }
       return a;
   }
-
   onReset(){
     this.isComplete = false
     this.point = 0
@@ -91,8 +89,6 @@ export class QuizComponent implements OnInit{
   }
 
   onSubmit(value: any, index: any){
-    // console.log(this.question)
-    // console.log(value);
     this.number++
     this.newrecord = false
     if(this.question[index].correct_answer == value){
@@ -100,11 +96,8 @@ export class QuizComponent implements OnInit{
     }
 
     if(index == 9){
-      // console.log('ciaooooooooo');
       this.isComplete = true
       this.newrecord = false
-      // console.log(this.client.point);
-      // console.log(this.point);
       if(this.point > this.bestScore){
         this.newrecord = true
       }
@@ -121,9 +114,6 @@ export class QuizComponent implements OnInit{
 
       this.changeQuestion()
     }
-
-    //console.log(this.point)
-
   }
 
 
